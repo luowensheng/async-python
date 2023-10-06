@@ -3,7 +3,7 @@ from multiprocessing import pool
 from time import perf_counter
 from typing import Any, Callable
 
-
+# Create a ThreadPool instance for managing asynchronous tasks.
 _THREADPOOL = pool.ThreadPool()
 
 class _AsyncThread:
@@ -38,7 +38,7 @@ class _AsyncThread:
         self.output = output
         self.elapsed += perf_counter() 
         self.done = True
-        
+
 
     def join(self, timeout:float=None) -> None:
         """
