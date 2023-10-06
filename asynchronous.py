@@ -6,8 +6,8 @@ from typing import Any, Callable
 # Create a ThreadPool instance for managing asynchronous tasks.
 _THREADPOOL = pool.ThreadPool()
 
-class _AsyncThread:
 
+class _AsyncThread:
 
     def __init__(self, func: Callable):
 
