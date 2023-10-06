@@ -1,14 +1,10 @@
-Certainly! Here's an updated README file that includes examples from the provided code:
-
----
-
 # Asynchronous Python Example
 
 This is a simple Python script demonstrating the use of asynchronous programming with Python's `threading` module. It showcases how to run functions both synchronously and asynchronously using a custom library that provides decorators for managing asynchronous execution.
 
 ## Prerequisites
 
-Make sure you have Python 3.x installed on your system.
+Make sure you have Python >= 3.9 installed on your system.
 
 ## Getting Started
 
