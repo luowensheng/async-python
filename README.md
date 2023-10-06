@@ -1,4 +1,4 @@
-Certainly! Here's a README file for the provided code:
+Certainly! Here's an updated README file that includes examples from the provided code:
 
 ---
 
@@ -36,11 +36,45 @@ The script consists of the following components:
 
 - `run_timer()`: A simple function that simulates a time-consuming task by sleeping for 2 seconds and then returning `True`.
 
+```python
+import threading
+from time import sleep
+
+def run_timer():
+    thread_id = threading.current_thread().ident
+    print(f"timer started for {thread_id = }")
+    sleep(2)
+    print(f"timer ended for {thread_id = }")
+    return True
+```
+
 - `do_something_async()`: A function decorated with `@do_async` that runs two `run_timer` functions asynchronously in separate threads using the custom library.
+
+```python
+@do_async
+def do_something_async():
+    async_thread_1 = do_async(run_timer)()
+    async_thread_2 = do_async(run_timer)()
+    return (do_await(async_thread_1), do_await(async_thread_2))
+```
 
 - `do_something_sync()`: A function that runs two `run_timer` functions synchronously.
 
+```python
+def do_something_sync():
+    output_1 = run_timer()
+    output_2 = run_timer()
+    return (output_1, output_2)
+```
+
 - `main()`: The entry point of the script decorated with `@entrypoint`. It demonstrates how to use the custom decorators to run functions asynchronously and synchronously and prints the results.
+
+```python
+@entrypoint
+def main():
+    print(do_await(do_something_async()))
+    print(do_something_sync())
+```
 
 ## Custom Decorators
 
@@ -64,7 +98,4 @@ You can use this code as a starting point to learn about asynchronous programmin
 
 - Use `@entrypoint` to define the entry point for your Python script.
 
-Feel free to adapt and extend the code to suit your specific requirements.
 
-
----
